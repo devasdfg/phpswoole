@@ -23,6 +23,6 @@ RUN apk add --no-cache --virtual .build-deps \
     && apk del .build-deps \
     && rm -rf /tmp/* /var/cache/apk/*
 
-COPY php.ini "/usr/local/etc/php/php.ini"
+COPY configs/php.ini "/usr/local/etc/php/php.ini"
 
 WORKDIR /app

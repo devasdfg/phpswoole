@@ -19,6 +19,6 @@ RUN apt-get update \
     && apt-get purge -y --auto-remove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY php.ini "/usr/local/etc/php/php.ini"
+COPY configs/php.ini "/usr/local/etc/php/php.ini"
 
 WORKDIR /app

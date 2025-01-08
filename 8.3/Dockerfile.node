@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y ca-certificates curl gnupg libicu-dev l
     && apt-get install -y nodejs \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY php.ini "/usr/local/etc/php/php.ini"
+COPY configs/php.ini "/usr/local/etc/php/php.ini"
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd intl zip gettext bcmath pcntl exif

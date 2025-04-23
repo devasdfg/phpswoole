@@ -17,6 +17,27 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd intl zip gettext bcmath pcntl exif
 
 
+# RUN apt-get update && apt-get install -y \
+#     git \
+#     unzip \
+#     libssl-dev \
+#     pkg-config \
+#     && rm -rf /var/lib/apt/lists/*
+
+
+# Clone MongoDB extension from GitHub at the tag you want (v1.21.0 here)
+# RUN git clone --branch 1.21.0 https://github.com/mongodb/mongo-php-driver.git \
+#     && cd mongo-php-driver \
+#     && git submodule update --init \
+#     && phpize \
+#     && ./configure \
+#     && make -j$(nproc) \
+#     && make all \
+#     && make install \
+#     && docker-php-ext-enable mongodb \
+#     && cd .. \
+#     && rm -rf mongo-php-driver
+
 RUN pecl install mongodb \
     && docker-php-ext-enable mongodb
 

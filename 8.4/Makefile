@@ -1,7 +1,7 @@
 build-node:
 	docker buildx build --platform linux/amd64,linux/arm64 -t docker.io/devasdf/phpswoole:8.4-node -f Dockerfile.node . --push
 
-build-node-dev	:
+build-node-dev:
 	docker buildx build --platform linux/amd64,linux/arm64 -t docker.io/devasdf/phpswoole:8.4-node-dev -f Dockerfile.node-dev . --push
 
 build:

@@ -6,6 +6,7 @@ This repository contains production-ready Docker base images for PHP application
 
 - PHP 8.2 with Swoole 5.1
 - PHP 8.3 with Swoole 5.1
+- PHP 8.4 with Swoole 6.0
 
 ## Features
 
@@ -28,9 +29,11 @@ This repository contains production-ready Docker base images for PHP application
 ### Basic PHP Swoole Image
 
 ```dockerfile
-FROM your-registry/swoole-base:8.2
+FROM devasdf/phpswoole:8.2
 # or
-FROM your-registry/swoole-base:8.3
+FROM devasdf/phpswoole:8.3
+# or
+FROM devasdf/phpswoole:8.4
 
 # Add your application code
 COPY . /app
@@ -39,9 +42,11 @@ COPY . /app
 ### Node.js Variant (for frontend builds)
 
 ```dockerfile
-FROM your-registry/swoole-base:8.2-node
+FROM devasdf/phpswoole:8.2-node
 # or
-FROM your-registry/swoole-base:8.3-node
+FROM devasdf/phpswoole:8.3-node
+# or
+FROM devasdf/phpswoole:8.4-node
 
 # Add your application code and build frontend assets
 COPY . /app

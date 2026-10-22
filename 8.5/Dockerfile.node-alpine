@@ -1,0 +1,6 @@
+FROM docker.io/devasdf/phpswoole:8.5-alpine
+
+RUN apk add --no-cache nodejs npm \
+    && node --version
+
+WORKDIR /app

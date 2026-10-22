@@ -1,4 +1,4 @@
-FROM phpswoole/swoole:5.1-php8.3-alpine
+FROM phpswoole/swoole:6.2-php8.3-alpine
 
 # Install build dependencies and compile extensions
 RUN apk add --no-cache --virtual .build-deps \
@@ -11,12 +11,12 @@ RUN apk add --no-cache --virtual .build-deps \
         libzip-dev \
         freetype-dev \
         jpeg-dev \
-        libpng-dev \
+        libpng-dev libwebp-dev \
         oniguruma-dev \
         openssl-dev \
         zlib-dev \
         gettext-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) gd intl zip gettext bcmath pcntl exif \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb \

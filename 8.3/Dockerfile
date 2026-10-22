@@ -21,7 +21,6 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) gd intl zip gettext bcmath pcntl exif
 
 RUN pecl install mongodb \
-    && docker-php-ext-enable mongodb \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && docker-php-ext-enable mongodb
 
 WORKDIR /app

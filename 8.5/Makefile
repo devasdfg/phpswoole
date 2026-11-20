@@ -1,5 +1,5 @@
 build:
-	docker buildx build --platform linux/amd64,linux/arm64 -t docker.io/devasdf/phpswoole:8.5 -f Dockerfile . --push
+	docker buildx build --pull --platform linux/amd64,linux/arm64 -t docker.io/devasdf/phpswoole:8.5 -f Dockerfile . --push
 
 build-node:
 	docker buildx build --platform linux/amd64,linux/arm64 -t docker.io/devasdf/phpswoole:8.5-node -f Dockerfile.node . --push
